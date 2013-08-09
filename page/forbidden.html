@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>没有权限-中小企业公共服务平台</title>
+<link href="../resources/css/style.css" rel="stylesheet" type="text/css">
+<link href="../resources/css/404.css" rel="stylesheet" type="text/css">
+<script src="../jsLib/jquery/jquery-1.9.0.min.js"></script>
+<script src="../jsLib/jquery.validate.min.js"></script>
+</head>
+<body>
+<div class="header">
+  <div class="container">
+     <div class="logo pull-left"><a href=""><img src="../resources/images/logo.png"></a></div>
+     <div class="search-box pull-left">
+       <input class="input" type="text">
+       <button class="btn" type="button"></button>
+     </div>
+     <ul class="top-navs pull-right">
+        <li><a href="">登录</a></li>
+        <li><a href="">注册</a></li>
+        <li><a href="">在线客服</a></li>
+        <li><a href="">网站导航</a></li>
+     </ul>
+  </div>
+</div>
+<!-- /header -->
+<div class="wrap">
+   <div class="container">
+       <div class="forbidden-icon"></div>
+       <div class="forbidden-content">
+         <h2>抱歉...</h2>
+         <p>当前您没有访问权限，请联系管理员</p>
+         <p class="s1"><a href=""><img src="../resources/images/back_btn.png"></a><a href="/"><img src="../resources/images/home_icon.png"></a></p>
+       </div>
+   </div>
+<!-- /container -->
+</div>
+<!-- /wrap -->
+<div class="footer">
+<p class="p1">主办：厚街镇经济科技信息局 | 承办：东莞市力凯科技发展有限公司 | 技术支持：深圳市依格欣计算机技术有限公司</p>
+<p class="p2">备案号：粤ICP备11040663号-1 | 增值电信业务经营许可证：B2-20060558号(ICP加挂服务)</p>
+<p class="p2">&copy;2012 东莞市力凯科技发展有限公司 版权所有</p>
+</div>
+<script>
+$(function(){
+	$(".form-horizontal").validate({
+		rules: {
+			enterprise_name: {
+				required: true,
+				minlength: 6
+			},
+			username:{
+				required: true,
+				minlength: 6
+			},
+			password:{
+				required: true,
+				minlength: 6
+			},
+			confirm_password: {
+				required: true,
+				minlength: 6,
+				equalTo: '#password'
+			}
+		},
+		messages: {
+			enterprise_name: {
+				required: "请输入 企业名称",
+				minlength: "企业名称不能小于6个字符"
+			},
+			username: {
+				required: "请输入用户名",
+				minlength: "用户名不能小于6个字符"
+			},
+			password: {
+				required: "请输入密码",
+				minlength: "密码不能少于6位"
+			},
+			confirm_password: {
+				required: "请输入密码",
+				minlength: "密码不能少于6位",
+				equalTo: "两次密码输入不一致"
+			}
+		}
+	});
+})
+</script>
+</body>
+</html>

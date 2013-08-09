@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>企业注册-中小企业公共服务平台</title>
+<link href="../jsLib/bootstrap-fileupload/bootstrap-fileupload.css" rel="stylesheet" type="text/css">
+<link href="../resources/css/style.css" rel="stylesheet" type="text/css">
+<link href="../resources/css/reg.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="header">
+  <div class="container">
+     <div class="logo pull-left"><a href=""><img src="../resources/images/logo.png"></a></div>
+     <div class="search-box pull-left">
+       <input class="input" type="text">
+       <button class="btn" type="button"></button>
+     </div>
+     <ul class="top-navs pull-right">
+        <li><a href="">登录</a></li>
+        <li><a href="">注册</a></li>
+        <li><a href="">在线客服</a></li>
+        <li><a href="">网站导航</a></li>
+     </ul>
+  </div>
+</div>
+<!-- /header -->
+<div class="container">
+   <div class="main">
+      <h2 class="top-title">企业通行证注册<i>欢迎来到东莞中小企业公共服务平台，只需简单几步，即可完成注册流程。</i></h2>
+      <ul class="crumb-nav">
+         <li class="s1">1 填写账号信息<span class="ok-icon"></span></li>
+         <li class="s3">2 验证账号信息</li>
+         <li>3 注册成功</li>
+      </ul>
+      <div class="form-container">
+      <form action="register_step_3.html" class="myform">
+      <h3 class="head">公司信息</h3>
+      <div class="form-horizontal">
+             <div class="control-group">
+               <label class="control-label" for="enterprise_name">公司名称：</label>
+               <div class="controls">
+                  <input type="text" id="enterprise_name" name="enterprise_name">
+               </div>
+             </div>
+             <div class="control-group">
+               <label class="control-label">所属行业：</label>
+               <div class="controls">
+				<select>
+				<option>软件行业</option>
+				<option>金融行业</option>
+				</select>
+               </div>
+             </div>
+             <div class="control-group">
+               <label class="control-label">公司电话：</label>
+               <div class="controls">
+                  <input type="text">
+               </div>
+             </div>
+             <div class="control-group">
+               <label class="control-label" for="email">电子邮箱：</label>
+               <div class="controls">
+                  <input type="text" name="email" id="email">
+               </div>
+             </div>
+             <div class="control-group">
+               <label class="control-label">邮件验证码：</label>
+               <div class="controls">
+                  <input type="text">
+               </div>
+             </div>
+             <div class="control-group">
+               <label class="control-label">营业执照：</label>
+               <div class="controls">
+					<div class="fileupload fileupload-new" data-provides="fileupload">
+						<div class="input-append">
+							<div class="uneditable-input span3">
+								<i class="icon-file fileupload-exists"></i> 
+								<span class="fileupload-preview"></span>
+							</div>
+							<span class="btn btn-file">
+							<span class="fileupload-new">选择文件</span>
+							<span class="fileupload-exists">替换</span>
+							<input type="file" id="licence" name="licence" /></span>
+							<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">移除</a>
+						</div>
+					</div>
+               </div>
+             </div>
+             <div class="control-group">
+               <label class="control-label">营业执照注册号：</label>
+               <div class="controls">
+                  <input type="text">
+               </div>
+             </div>
+             <div class="control-group">
+               <label class="control-label">企业公函：</label>
+               <div class="controls">
+					<div class="fileupload fileupload-new" data-provides="fileupload">
+						<div class="input-append">
+							<div class="uneditable-input span3">
+								<i class="icon-file fileupload-exists"></i> 
+								<span class="fileupload-preview"></span>
+							</div>
+							<span class="btn btn-file">
+							<span class="fileupload-new">选择文件</span>
+							<span class="fileupload-exists">替换</span>
+							<input type="file" /></span>
+							<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">移除</a>
+						</div>
+					</div>
+               </div>
+             </div>
+          </div>
+          <h3 class="head">联系方式</h3>
+      <div class="form-horizontal">
+             <div class="control-group">
+               <label class="control-label">真是姓名：</label>
+               <div class="controls">
+                  <input type="text">
+               </div>
+             </div>
+             <div class="control-group">
+               <label class="control-label" for="tel">手机号码：</label>
+               <div class="controls">
+                  <input type="text" id="tel" name="tel">
+               </div>
+             </div>
+             <div class="control-group">
+               <label class="control-label" for="qq">QQ：</label>
+               <div class="controls">
+                  <input type="text" id="qq" name="qq">
+               </div>
+             </div>
+             <div class="control-group">
+               <label class="control-label"></label>
+               <div class="controls">
+                  <input type="checkbox">我已阅读并同意《平台服务协议》
+               </div>
+             </div>
+             <div class="control-group">
+               <label class="control-label"></label>
+               <div class="controls">
+                  <button class="agree-btn"></button>
+               </div>
+             </div>
+          </div>
+        </form>
+      </div>
+   </div>
+</div>
+<!-- /container -->
+<div class="footer">
+<p class="p1">主办：厚街镇经济科技信息局 | 承办：东莞市力凯科技发展有限公司 | 技术支持：深圳市依格欣计算机技术有限公司</p>
+<p class="p2">备案号：粤ICP备11040663号-1 | 增值电信业务经营许可证：B2-20060558号(ICP加挂服务)</p>
+<p class="p2">&copy;2012 东莞市力凯科技发展有限公司 版权所有</p>
+</div>
+<script src="../jsLib/jquery/jquery-1.9.0.min.js"></script>
+<script src="../jsLib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../jsLib/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+<script src="../jsLib/jquery.validate.min.js"></script>
+<script>
+$(function(){
+	$(".myform").validate({
+		rules: {
+			enterprise_name: {
+				required: true,
+				minlength: 6
+			},
+			username:{
+				required: true,
+				minlength: 6
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			qq: {
+				required: true,
+				number: true
+			}
+		},
+		messages: {
+			enterprise_name: {
+				required: "请输入企业名称",
+				minlength: "企业名称不能小于6个字符"
+			},
+			username: {
+				required: "请输入用户名",
+				minlength: "用户名不能小于6个字符"
+			},
+			email: '请输入有效的邮箱地址',
+			qq: {
+				required: "请输入QQ号码",
+				number: "请输入数字"
+			}
+		}
+	});
+})
+</script>
+</body>
+</html>

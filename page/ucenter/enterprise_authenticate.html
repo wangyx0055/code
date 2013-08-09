@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户中心-中小企业公共服务平台</title>
+<link href="../../jsLib/bootstrap-fileupload/bootstrap-fileupload.css" rel="stylesheet" type="text/css">
+<link href="../../resources/css/style.css" rel="stylesheet" type="text/css">
+<link href="../../resources/css/ucenter.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="header">
+  <div class="container">
+    <div class="logo pull-left"><a href=""><img src="../../resources/images/logo.png"></a></div>
+    <div class="search-box pull-left">
+      <input class="input" type="text">
+      <button class="btn" type="button"></button>
+    </div>
+    <ul class="top-navs pull-right">
+      <li><a href="">在线客服</a></li>
+      <li><a href="">网站导航</a></li>
+    </ul>
+  </div>
+</div>
+<!-- /header -->
+<div class="container">
+<ul class="breadcrumb">
+<li><a href="#">首页</a><span class="divider">/</span></li>
+<li class="active">用户中心</li>
+</div>
+<!-- /container -->
+<div class="container">
+  <div class="main">
+    <h1 class="ucenter-title">用户中心</h1>
+    <div class="ucenter-menu">
+      <ul>
+        <li><a href="ucenter.html">资料修改</a></li>
+        <li><a href="change_password.html">密码修改</a></li>
+        <li><a href="account_manage.html">头像修改</a></li>
+        <li class="hover"><a href="enterprise_authenticate.html">企业认证</a></li>
+      </ul>
+    </div>
+    <div class="ucenter-box">
+ <form class="form-horizontal" method="post">
+        <div class="control-group">
+               <label class="control-label">营业执照：</label>
+               <div class="controls">
+					<div class="fileupload fileupload-new" data-provides="fileupload">
+						<div class="input-append">
+							<div class="uneditable-input span3">
+								<i class="icon-file fileupload-exists"></i> 
+								<span class="fileupload-preview"></span>
+							</div>
+							<span class="btn btn-file">
+							<span class="fileupload-new">选择文件</span>
+							<span class="fileupload-exists">替换</span>
+							<input type="file" id="licence" name="licence" /></span>
+							<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">移除</a>
+						</div>
+					</div>
+               </div>
+             </div>
+        <div class="control-group">
+               <label for="enterprise_name" class="control-label">营业执照注册号：</label>
+               <div class="controls">
+                  <input type="text">
+               </div>
+        </div>
+        <div class="control-group">
+               <label for="enterprise_name" class="control-label">企业公函：</label>
+               <div class="controls">
+					<div class="fileupload fileupload-new" data-provides="fileupload">
+						<div class="input-append">
+							<div class="uneditable-input span3">
+								<i class="icon-file fileupload-exists"></i> 
+								<span class="fileupload-preview"></span>
+							</div>
+							<span class="btn btn-file">
+							<span class="fileupload-new">选择文件</span>
+							<span class="fileupload-exists">替换</span>
+							<input type="file" id="licence" name="licence" /></span>
+							<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">移除</a>
+						</div>
+					</div>
+               </div>
+        </div>
+        <div class="control-group">
+               <label for="enterprise_name" class="control-label"></label>
+               <div class="controls">
+                  <input class="btn-primary" type="submit" value="确定">
+               </div>
+        </div>
+</form>
+    </div>
+    <!-- /ucenter-box -->
+  </div>
+</div>
+<!-- /container -->
+<div class="footer">
+  <p class="p1">主办：厚街镇经济科技信息局 | 承办：东莞市力凯科技发展有限公司 | 技术支持：深圳市依格欣计算机技术有限公司</p>
+  <p class="p2">备案号：粤ICP备11040663号-1 | 增值电信业务经营许可证：B2-20060558号(ICP加挂服务)</p>
+  <p class="p2">&copy;2012 东莞市力凯科技发展有限公司 版权所有</p>
+</div>
+<script src="../../jsLib/jquery/jquery-1.9.0.min.js"></script>
+<script src="../../jsLib/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../jsLib/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+</body>
+</html>

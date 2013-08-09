@@ -1,0 +1,281 @@
+@CHARSET "UTF-8";
+body{
+	font-family: '新宋体';
+	background:#fff !important;
+}
+/*公共样式*/
+.id-container{
+	font-size:14px;
+	margin:0 auto;
+	width:1126px;
+    padding-top:1px;
+    padding-bottom:30px;
+    overflow:hidden;
+	background:url(../images/bg.jpg) top center no-repeat;
+}
+.ic-content{
+	margin-top:390px;
+    min-height:400px;
+}
+.photo, .works, .download{
+	width:774px;
+}
+.article, .intro, .about, .subject, .news{
+	width:600px;
+	min-height:400px;
+}
+.intro-content, .about-content, .subject-content, .photo-content, .works-content, .news-content{
+	clear:both;
+}
+.intro-content p, .about-content p, .subject-content p, .news-content p{
+	clear:both;
+	text-indent: 2em;
+	font-family: '新宋体';
+	line-height:2em;
+}
+.subject-title-l1{
+	float:left;
+	font-size:16px;
+	margin-top:10px;
+	margin-bottom:30px;
+	padding-bottom:5px;
+	border-bottom:4px solid #ed3f37;
+}
+.subject-title-l2{
+	float:left;
+	padding:0 10px;
+	color:#fff;
+	font-weight:normal;
+	font-size:16px;
+	line-height:24px;
+	background:#ed3f37;
+}
+.subject-title-l2-a{
+	font-size:18px;
+    font-weight:normal;
+	padding:10px 0;
+}
+.subject-title-l3{
+	padding-top:14px;
+	padding-left:28px;
+	clear:both;
+	font-weight:normal;
+	font-size:14px;
+	height:20px;
+	color:#ed3f37;
+	line-height:20px;
+	background:url(../images/dot.png) 10px 15px no-repeat;
+}
+/*左侧菜单*/
+.sidebar{
+	margin:0 32px 0 8px;
+	width:158px;
+	min-height:200px;
+	background:#eee;
+}
+.sidebar li{
+	height:40px;
+	line-height:40px;
+	background:#ed3f37;
+	border-bottom:1px solid #ee4941;
+	float:left;
+	width:100%;
+}
+.sidebar li a{
+	display:block;
+	width:100%;
+ 	height:100%;
+	color:#fff;
+}
+.sidebar li a i{
+	float:left;
+	display:block;
+	width:40px;
+	height:100%;
+	background:url(../images/arrow.png) no-repeat;
+}
+.sidebar li a em{
+	float:left;
+	display:block;
+	border-left:1px solid #ee4941;
+	padding-left:15px;
+	width:102px;
+	height:100%;
+}
+.sidebar li.current, .sidebar li.hover{
+	background:#312e38;
+}
+.sidebar li.current a em, .sidebar li.hover a em{
+	border-left:1px solid #312e38;
+}
+/*大赛主题*/
+.subject-content h1{
+	padding:10px 0;
+}
+/*活动介绍*/
+.intro-content p{
+	padding:10px 0;
+}
+.intro-list{
+	padding:10px 0;
+	clear:both;
+}
+.intro-list li{
+	margin:8px 0 8px 28px;
+	padding-left:30px;
+	height:20px;
+	line-height:19px;
+	background:url(../images/sprites_number.png) no-repeat;
+}
+.intro-list li.s1{
+	background-position:0 0;
+}
+.intro-list li.s2{
+	background-position:0 -100px;
+}
+.intro-list li.s3{
+	background-position:0 -200px;
+}
+/*往界花絮*/
+.photo-gallery li{
+	float:left;
+	margin-right:8px;
+	margin-bottom:26px;
+	width:250px;
+	height:179px;
+	overflow:hidden;
+	box-shadow:3px 3px 1px #c6c5c5;
+	-webkit-box-shadow:3px 3px 1px #c6c5c5;
+	-moz-box-shadow:3px 3px 1px #c6c5c5;
+}
+/*往界作品花絮*/
+.works-gallery li{
+	float:left;
+	margin-right:8px;
+	margin-bottom:26px;
+	width:250px;
+	height:329px;
+	overflow:hidden;
+	box-shadow:3px 3px 1px #c6c5c5;
+	-webkit-box-shadow:3px 3px 1px #c6c5c5;
+	-moz-box-shadow:3px 3px 1px #c6c5c5;
+}
+/*相关下载*/
+.download-content{
+	clear:both;
+}
+.download-source li{
+	float:left;
+	width:386px;
+	height:100px;
+	margin:10px 0;
+	text-align:center;
+}
+/*参赛资讯*/
+.nop{
+	clear:both;
+	padding:10px 0;
+	overflow:hidden;
+}
+.nop p{
+	padding:0 !important;
+}
+.f12{
+	font-size:12px;
+}
+.f16{
+	font-size:16px;
+}
+.f24{
+	font-size:24px;
+}
+.fbold{
+	font-weight: bold;
+}
+.fred{
+	color:#ed3f37;
+}
+.fspecial{
+	font-weight:bold;
+	color:#ed3f37;
+}
+.funderline{
+	color:#ed3f37;
+	text-decoration: underline;
+}
+.text-panel{
+	padding:15px;
+	background:#ed3f37;
+}
+.text-panel h2{
+	color:#fff;
+	font-size:16px;
+	padding-bottom:10px;
+}
+.text-panel p{
+	text-indent: 0;
+	color:#fff;
+}
+.news-list{
+	clear:both;
+}
+.news-list li{
+	margin:8px 0 8px 28px;
+	padding-left:30px;
+	min-height:20px;
+	line-height:19px;
+	background:url(../images/sprites_number.png) no-repeat;
+}
+.news-list li.s1{
+	background-position:0 0;
+}
+.news-list li.s2{
+	background-position:0 -100px;
+}
+.news-list li.s3{
+	background-position:0 -200px;
+}
+.news-list li.s4{
+	background-position:0 -300px;
+}
+.news-list li.s5{
+	background-position:0 -400px;
+}
+.news-list-l{
+	padding:10px 0;
+	clear:both;
+}
+.news-list-l li{
+	margin:8px 0 8px 28px;
+	padding-left:30px;
+	min-height:20px;
+	line-height:19px;
+	background:url(../images/sprites_letter.png) no-repeat;
+}
+.news-list-l li.s1{
+	background-position:0 0;
+}
+.news-list-l li.s2{
+	background-position:0 -30px;
+}
+.news-list-l li.s3{
+	background-position:0 -60px;
+}
+.news-list-l li.s4{
+	background-position:0 -90px;
+}
+.news-list-l li.s5{
+	background-position:0 -120px;
+}
+/*回到顶部*/
+#toTop {
+	width:65px;
+	height:65px;
+	background:url(../images/back_to_top.jpg) no-repeat;
+    padding:5px;
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    cursor:pointer;
+    display:none;
+}

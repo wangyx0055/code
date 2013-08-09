@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:ehcache="http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring
+ 		http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd
+ 		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+	default-autowire="byName" default-lazy-init="true">
+	
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/menu/**" location="/menu/" />
+	<resources mapping="/jsLib/**" location="/jsLib/" />
+	<resources mapping="/admin/**" location="/admin/" />
+	<resources mapping="/upload/**" location="/upload/" />
+	<resources mapping="/page/**" location="/page/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	<!-- spring ioc 扫描 -->
+	<context:component-scan base-package="com.eaglec.hj" />
+	<!-- spring 上传 -->
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize">
+			<beans:value>11048576</beans:value>
+		</beans:property>
+	</beans:bean>
+	<!-- 加载配置文件 -->
+	<context:property-placeholder location="classpath:config.properties" />
+	<!-- 配置数据源 -->
+	<beans:bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+		<beans:property name="driverClassName" value="${driverClassName}" />
+		<beans:property name="url" value="${jdbc_url}" />
+		<beans:property name="username" value="${jdbc_username}" />
+		<beans:property name="password" value="${jdbc_password}" />
+
+		<!-- 初始化连接大小 -->
+		<beans:property name="initialSize" value="0" />
+		<!-- 连接池最大使用连接数量 -->
+		<beans:property name="maxActive" value="20" />
+		<!-- 连接池最小空闲 -->
+		<beans:property name="minIdle" value="0" />
+		<!-- 获取连接最大等待时间 -->
+		<beans:property name="maxWait" value="5000" />
+
+		<beans:property name="validationQuery" value="${validationQuery}" />
+		<beans:property name="testOnBorrow" value="false" />
+		<beans:property name="testOnReturn" value="false" />
+		<beans:property name="testWhileIdle" value="true" />
+
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<beans:property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<beans:property name="minEvictableIdleTimeMillis" value="25200000" />
+
+		<!-- 打开removeAbandoned功能 -->
+		<beans:property name="removeAbandoned" value="true" />
+		<!-- 1800秒，也就是30分钟 -->
+		<beans:property name="removeAbandonedTimeout" value="1800" />
+		<!-- 关闭abanded连接时输出错误日志 -->
+		<beans:property name="logAbandoned" value="true" />
+
+		<!-- 监控数据库 -->
+		<!-- <property name="filters" value="stat" /> -->
+		<beans:property name="filters" value="mergeStat" />
+	</beans:bean> 
+	
+	<!-- hibernate3.6 配置 -->
+	<beans:bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<beans:property name="dataSource">
+            <beans:ref local="dataSource"/>
+        </beans:property>
+		<beans:property name="hibernateProperties">
+			<beans:props>
+				<beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</beans:prop>
+				<beans:prop key="hibernate.show_sql">false</beans:prop>
+				<beans:prop key="hibernate.format_sql">true</beans:prop>
+				<beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop>
+				<beans:prop key="hibernate.cache.use_second_level_cache">true</beans:prop>
+				<beans:prop key="hibernate.cache.use_query_cache">false</beans:prop>
+				<beans:prop key="hibernate.cache.provider_class">org.hibernate.cache.HashtableCacheProvider</beans:prop>
+			</beans:props>
+		</beans:property>
+		<!-- 自动扫描注解方式配置的hibernate类文件 -->
+		<beans:property name="packagesToScan">
+			<beans:list>
+				<beans:value>com.eaglec.hj.domain</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+	<!-- hibernate事务管理 -->
+    <beans:bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <beans:property name="sessionFactory">
+            <beans:ref local="sessionFactory"/>
+        </beans:property>
+    </beans:bean>
+	
+	<!-- 配置Spring对Hibernate支持的模板 -->
+	<beans:bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<beans:constructor-arg name="sessionFactory" ref="sessionFactory"/>
+	</beans:bean>
+	<ehcache:annotation-driven cache-manager="ehCacheManager" />
+	<!-- google缓存管理 -->
+	<beans:bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">    
+       <beans:property name="configLocation" value="classpath:ehcache.xml" />    
+   	</beans:bean>
+	
+</beans:beans>

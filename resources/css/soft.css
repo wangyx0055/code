@@ -1,0 +1,126 @@
+.pagination{
+	padding:20px 0;
+}
+.soft-wrap {
+    background:#fff;
+    overflow: hidden;
+    padding: 10px;
+}
+.soft-wrap .sidebar{
+    width: 230px;
+}
+.soft-wrap .content{
+    width: 710px;
+    min-height:500px;
+}
+.column-bar{
+	border:2px solid #496eb8;
+}
+.column-bar .head, .content .head{
+	height:38px;
+    line-height:36px;
+    background:#496eb8;
+    color:#fff;
+    font-size:16px;
+    padding:0 10px;
+}
+.column-bar .list{
+	
+}
+.column-bar .list > li{
+	position:relative;
+    line-height:30px;
+    font-size:12px;
+	padding-left:30px;
+	border-bottom:1px solid #ccc;
+    background:url(../images/dot_red.gif) 15px 15px no-repeat;
+}
+.column-bar .list > li > a{
+	color:#333;
+}
+.column-bar .list > li > ul{
+	margin-left:-30px;
+}
+.column-bar .list > li > ul > li{
+	position:relative;
+	border-top:1px solid #ccc;
+	font-size:12px;
+    padding-left:40px;
+    background:url(../images/dot_grey.gif) 30px 15px no-repeat;
+    z-index:2;
+}
+.column-bar .list > li > ul > li > a{
+	color:#333;
+}
+/*
+ *Content
+ */
+ .soft-data{
+ }
+.soft-data tr th{
+	padding:10px 0;
+	background:#d6d6d6;
+	font-weight:normal;
+}
+.soft-data tr td{
+	padding:10px 4px;
+	line-height:1.2em;
+}
+.soft-data tr:nth-of-type(odd){background:#fff;}
+.soft-data tr:nth-of-type(even){background:#eaf3ff;}
+.soft-data tr td .price{
+	color:#fd9326;
+}
+.soft-data tr td .apply{
+	display:inline-block;
+	width:68px;
+	height:29px;
+	background:#8dc525;
+	color:#fff;
+	line-height:28px;
+}
+.switch{
+	height:32px;
+	background:#3d85f1;
+	text-align:right;
+	color:#fff;
+	padding:0 10px;
+	line-height:30px;
+}
+.description{
+	padding:10px;
+	line-height:1.8em;
+	color:#333;
+}
+.description h3{
+	padding:5px 0;
+}
+.widget-head{
+	height:30px;
+	background:#a2c5ff;
+	padding:0 10px;
+	line-height:29px;
+	font-size:14px;
+}
+.widget-box .data{
+	width:100%;
+}
+.widget-box .data th{
+	background:#deeafe;
+	line-height:27px;
+	font-weight:normal;
+}
+.widget-box .data{ border-collapse: collapse;
+empty-cells : show;
+}
+.widget-box .data th, .widget-box .data td{ border: #ccc solid 1px;
+padding: 10px 3px;
+text-align:center;
+}
+.ok{
+	margin:0 auto;
+	display:block;
+	width:12px;
+	height:10px;
+	background:url(../images/ok.gif) no-repeat;
+}

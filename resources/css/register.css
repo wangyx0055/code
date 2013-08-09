@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+.form-box{
+	padding:20px;
+	height:400px;
+    background:#f8f8f8;
+    border:1px solid #ccc;
+    margin-top:26px;
+    border-radius: 4px 4px 4px 4px;
+}
+.form-box .title{
+	color:#208ff1;
+    font-size:24px;
+    padding-bottom:12px;
+    border-bottom:1px solid #ccc;
+}
+.form-box .title i{
+	font-size:12px;
+    color:#666666;
+    font-weight:normal;
+    font-style:normal;
+    padding:0 10px;
+}
+.form-box .form{
+	width:540px;
+    padding:20px 0;
+}
+.form-box .form td.s1{
+	width:100px;
+    font-size:15px;
+    height:26px;
+    padding:8px 20px;
+}
+.form-box .form .input{
+	height:24px;
+    border:1px solid #878787;
+    width:222px;
+    padding:0 5px;
+}
+.form-box .form .submit, .form-box .form .login-btn{
+	cursor:pointer;
+	border:none;
+	width:221px;
+    height:36px;	
+}
+.form-box .form .submit{
+    background:url(../images/btn1.gif) no-repeat;
+}
+.form-box .form .login-btn{
+	background:url(../images/btn2.gif) no-repeat;
+}
+.form-box .notice{
+	width:390px;
+    margin-top:44px;
+    min-height:310px;
+    background:url(../images/photo_5.jpg) no-repeat;
+}
+.form-box .notice .s1{
+	color:#177ad6;
+    font-size:14px;
+    padding:0 5px;
+}
+.form-box .notice .s2{
+    font-size:18px;
+    padding:20px 0;
+    color:#666;
+}

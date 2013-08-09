@@ -1,0 +1,151 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<base href="<%=basePath%>">
+<meta charset="UTF-8">
+<title>用户中心-中小企业公共服务平台</title>
+<link href="resources/css/style.css" rel="stylesheet" type="text/css">
+<link href="resources/css/ucenter.css" rel="stylesheet" type="text/css">
+<link href="jsLib/easyui/themes/default/easyui.css" rel="stylesheet" type="text/css">
+<link href="jsLib/easyui/themes/icon.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="header">
+  <div class="container">
+    <div class="logo pull-left"><a href=""><img src="../../resources/images/logo.png"></a></div>
+    <div class="search-box pull-left">
+      <input class="input" type="text">
+      <button class="btn" type="button"></button>
+    </div>
+    <ul class="top-navs pull-right">
+      <li><a href="">在线客服</a></li>
+      <li><a href="">网站导航</a></li>
+    </ul>
+  </div>
+</div>
+<!-- /header -->
+<div class="container">
+<ul class="breadcrumb">
+<li><a href="#">首页</a><span class="divider">/</span></li>
+<li class="active">用户中心</li>
+</div>
+<!-- /container -->
+<div class="container">
+  <div class="main">
+    <h1 class="ucenter-title">用户中心</h1>
+    <div class="ucenter-menu">
+      <ul>
+        <li><a href="public/ucenter">用户首页</a></li>
+        <li><a href="public/ucenter_info">用户资料</a></li>
+        <li class="hover"><a href="public/account_manage">企业子账号</a></li>
+        <li><a href="page/ucenter/message_manage.html">通知</a></li>
+       	<li><a href="page/ucenter/email_manage.html">邮件</a></li>
+      </ul>
+    </div>
+    <div class="ucenter-box">
+      <table id="dg" title="企业子账号" class="easyui-datagrid" style="width:950px;height:350px"
+			url="passport/findPassportByEid"
+			toolbar="#toolbar" pagination="true"
+			rownumbers="true" fitColumns="true" singleSelect="true">
+        <thead>
+          <tr>
+            <th field="uid" width="0" style="display:none" >ID</th>
+            <th field="upassid" width="50">子账号</th>
+            <th field="uname" width="50">所属人</th>
+            <th field="uregdate" width="50">生成时间</th>
+          </tr>
+        </thead>
+      </table>
+      <div id="toolbar"> <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">新增账号</a> <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">编辑账号</a> <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="removeUser()">删除账号</a> </div>
+      <div id="dlg" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
+			closed="true" buttons="#dlg-buttons">
+        <div class="ftitle">账号信息</div>
+        <form id="fm" method="post" novalidate>
+          <div class="fitem">
+            <input id="uid" name="uid" type="hidden" value="" />
+            <label>子账号:</label>
+            <input id="upassid" name="upassid" class="easyui-validatebox" required="true">
+          </div>
+          <div class="fitem">
+            <label>所属人:</label>
+            <input id="uname" name="uname" class="easyui-validatebox" required="true">
+          </div>      
+        </form>
+      </div>
+      <div id="dlg-buttons"> <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveUser()">保存</a> <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a> </div>
+    </div>
+    <!-- /ucenter-box --> 
+  </div>
+</div>
+<!-- /container -->
+<div class="footer">
+  <p class="p1">主办：厚街镇经济科技信息局 | 承办：东莞市力凯科技发展有限公司 | 技术支持：深圳市依格欣计算机技术有限公司</p>
+  <p class="p2">备案号：粤ICP备11040663号-1 | 增值电信业务经营许可证：B2-20060558号(ICP加挂服务)</p>
+  <p class="p2">&copy;2012 东莞市力凯科技发展有限公司 版权所有</p>
+</div>
+<script src="jsLib/jquery/jquery-1.9.0.min.js"></script> 
+<script src="jsLib/easyui/jquery.easyui.min.js"></script> 
+<script src="jsLib/easyui/locale/easyui-lang-zh_CN.js"></script> 
+<script>
+var url;
+function newUser(){
+	$('#dlg').dialog('open').dialog('setTitle','新增账号');
+	$('#fm').form('clear');
+	url = 'passport/addChildAccounts';
+}
+function editUser(){
+	var row = $('#dg').datagrid('getSelected');
+	if (row){
+		$('#dlg').dialog('open').dialog('setTitle','编辑账号');
+		$('#fm').form('load',row);
+		url = 'passport/updChildAccounts';
+	}
+}
+function saveUser(){
+	$('#fm').form('submit',{
+		url: url,
+		onSubmit: function(){		
+			return $(this).form('validate');
+		},
+		success: function(result){
+			var result = eval('('+result+')');
+			if (result.success){
+				$('#dlg').dialog('close');		// close the dialog
+				$('#dg').datagrid('reload');	// reload the user data
+			} else {
+				$.messager.show({
+					title: 'Error',
+					msg: result.msg
+				});
+			}		
+		}
+	});
+}
+function removeUser(){
+	var row = $('#dg').datagrid('getSelected');
+	if (row){
+		$.messager.confirm('Confirm','您确定要删除这个账号吗？',function(r){
+			if (r){
+				$.post('passport/removeChildAccounts',{uid:row.uid},function(result){
+					if (result.success){
+						$('#dg').datagrid('reload');	// reload the user data
+					} else {
+						$.messager.show({	// show error message
+							title: 'Error',
+							msg: result.msg
+						});
+					}
+				},'json');
+			}
+		});
+	}
+}
+	</script>
+</body>
+</html>

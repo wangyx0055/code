@@ -1,0 +1,71 @@
+.user-info-wrap{
+	padding:10px;
+	border:1px solid #eee;
+}
+.infoblock{
+	
+}
+.base-view-edit, .enterprise-view-edit, .contact-view-edit{
+	display:none;
+}
+.info_title{
+	margin: 15px 0 11px;
+}
+.S_line2 {
+    border-color: #E6E6E6;
+}
+.S_txt2{
+    color: #808080;
+}
+fieldset {
+    border-style: solid;
+    border-width: 1px 0 0;
+    display: block;
+}
+fieldset legend {
+    font-weight: bold;
+}
+.info_title .tit {
+    font-size: 12px;
+    padding: 0 5px 0 0;
+    color:#333;
+    font-size:13px;
+}
+.info_title .btns {
+    float: right;
+    margin-top: -18px;
+    position: relative;
+}
+.info_title .btns a {
+    margin-left: 5px;
+    vertical-align: middle;
+    display:block;
+    width:40px;
+    height:20px;
+    background:#eee;
+    line-height:19px;
+    text-align:center;
+    border:1px solid #ccc;
+}
+.info_title .btns a:hover{
+	background:#ffc57b;
+	color:#fff;
+	border-color:#f08600;
+}
+.pf-item {
+    font-size: 12px;
+    line-height: 30px;
+    margin-bottom: 5px;
+    position: relative;
+}
+.pf-item .label {
+    float: left;
+    text-align: right;
+    white-space: nowrap;
+    width: 53px;
+}
+.pf-item .con {
+    margin-left: 67px;
+    padding: 0 10px;
+    word-wrap: break-word;
+}

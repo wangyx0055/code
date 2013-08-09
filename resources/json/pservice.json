@@ -1,0 +1,6 @@
+﻿[
+	{url:"admin/_hjform.jsp",text:"政企一键通"},
+	{url:"admin/enterprise.jsp",text:"工业团购"},
+	{url:"admin/passport.jsp",text:"电子商务"},
+	{url:"admin/module.jsp",text:"人力资源"}
+]

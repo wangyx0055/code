@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>企业注册-中小企业公共服务平台</title>
+<link href="../resources/css/style.css" rel="stylesheet" type="text/css">
+<link href="../resources/css/reg.css" rel="stylesheet" type="text/css">
+<script src="../jsLib/jquery/jquery-1.9.0.min.js"></script>
+<script src="../jsLib/jquery.validate.min.js"></script>
+</head>
+<body>
+<div class="header">
+  <div class="container">
+     <div class="logo pull-left"><a href=""><img src="../resources/images/logo.png"></a></div>
+     <div class="search-box pull-left">
+       <input class="input" type="text">
+       <button class="btn" type="button"></button>
+     </div>
+     <ul class="top-navs pull-right">
+        <li><a href="">登录</a></li>
+        <li><a href="">注册</a></li>
+        <li><a href="">在线客服</a></li>
+        <li><a href="">网站导航</a></li>
+     </ul>
+  </div>
+</div>
+<!-- /header -->
+<div class="container">
+   <div class="main">
+      <h2 class="top-title">企业通行证注册<i>欢迎来到东莞中小企业公共服务平台，只需简单几步，即可完成注册流程。</i></h2>
+      <ul class="crumb-nav">
+         <li class="s1">1 填写账号信息</li>
+         <li class="s2">2 验证账号信息</li>
+         <li>3 注册成功</li>
+      </ul>
+      <div class="form-container">
+         <form action="register_step_2.html" class="form-horizontal">
+             <div class="control-group">
+               <label class="control-label" for="enterprise_name">企业名称：</label>
+               <div class="controls">
+                  <input type="text" id="enterprise_name" name="enterprise_name">
+               </div>
+             </div>
+            <div class="control-group">
+               <label class="control-label" for="username">登陆账号：</label>
+               <div class="controls">
+                  <input type="text" id="username" name="username">
+               </div>
+             </div>
+            <div class="control-group">
+               <label class="control-label" for="password">密码：</label>
+               <div class="controls">
+                  <input type="password" id="password" name="password">
+               </div>
+             </div>
+           <div class="control-group">
+               <label class="control-label" for="confirm_password">确认密码：</label>
+               <div class="controls">
+                  <input type="password" id="confirm_password" name="confirm_password">
+               </div>
+           </div>
+           <div class="control-group">
+               <label class="control-label"></label>
+               <div class="controls">
+               <input id="agree" name="agree" type="checkbox">我已阅读并同意<a style="color:#208FF1;text-decoration:underline;" href="/page/rules.html" target="_blank">《平台服务协议》</a>
+               </div>
+           </div>
+           <div class="control-group">
+               <label class="control-label"></label>
+               <div class="controls">
+                  <button type="submit" class="buttom-next"></button>
+               </div>
+           </div>
+         </form>
+      </div>
+   </div>
+</div>
+<!-- /container -->
+<div class="footer">
+<p class="p1">主办：厚街镇经济科技信息局 | 承办：东莞市力凯科技发展有限公司 | 技术支持：深圳市依格欣计算机技术有限公司</p>
+<p class="p2">备案号：粤ICP备11040663号-1 | 增值电信业务经营许可证：B2-20060558号(ICP加挂服务)</p>
+<p class="p2">&copy;2012 东莞市力凯科技发展有限公司 版权所有</p>
+</div>
+<script>
+$(function(){
+	$(".form-horizontal").validate({
+		rules: {
+			enterprise_name: {
+				required: true,
+				minlength: 6
+			},
+			username:{
+				required: true,
+				minlength: 6
+			},
+			password:{
+				required: true,
+				minlength: 6
+			},
+			confirm_password: {
+				required: true,
+				minlength: 6,
+				equalTo: '#password'
+			},
+			agree: {
+				required: true
+			}
+		},
+		messages: {
+			enterprise_name: {
+				required: "请输入 企业名称",
+				minlength: "企业名称不能小于6个字符"
+			},
+			username: {
+				required: "请输入用户名",
+				minlength: "用户名不能小于6个字符"
+			},
+			password: {
+				required: "请输入密码",
+				minlength: "密码不能少于6位"
+			},
+			confirm_password: {
+				required: "请输入密码",
+				minlength: "密码不能少于6位",
+				equalTo: "两次密码输入不一致"
+			},
+			agree: {
+				required: "请勾选"
+			}
+		}
+	});
+})
+</script>
+</body>
+</html>

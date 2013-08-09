@@ -1,0 +1,9 @@
+[
+	{url:"admin/enterprise",text:"企业管理"},
+	{url:"admin/industry",text:"行业管理"},
+	{url:"admin/passport",text:"账号管理"},
+	{url:"admin/channel",text:"模块管理"},
+	{url:"admin/serve",text:"服务管理"},
+	{url:"admin/news",text:"新闻管理"}
+	
+]
